@@ -42,6 +42,6 @@ if __name__ == "__main__":
     - Se predice un alto índice de recaída.
 
     """
-    file_output = "informe_actual.pdf"
+    file_output = "../informe_actual.pdf"
 
     generate_clinical_report(title, content, file_output)
