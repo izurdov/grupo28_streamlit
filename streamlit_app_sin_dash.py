@@ -26,8 +26,24 @@ data = pd.DataFrame({
 def mostrar_alertas():
     st.subheader("🔔 Alertas Recientes")
     st.info("📢 Consulta programada con Paciente A para el 25/11/2024.")
-    st.warning("⚠️ Riesgo elevado detectado en Paciente B.")
-    st.success("✅ Ejercicio completado con éxito por Paciente C.")
+    #st.warning("⚠️ Riesgo elevado detectado en Paciente B.")
+    #st.success("✅ Ejercicio completado con éxito por Paciente C.")
+
+
+def mostrar_alertas_audio(porcentaje, emocion):
+    #st.subheader("🔔 Alertas Recientes")
+    #st.info("📢 Consulta programada con Paciente A para el 25/11/2024.")
+    #st.subheader("🔔 Alertas IA Audio")
+    if porcentaje < 51:
+        st.info("📢 Estado del paciente "+ emocion + " " + str(porcentaje) +"%")
+    else:
+        st.info("📢 Estado del paciente "+ emocion + " " + str(porcentaje) +"%")
+        st.error("Riesgo elevado detectado en Paciente 5237", icon="🚨")
+
+
+
+
+
 
 # Función: Mostrar listado de pacientes
 def listado_pacientes():
@@ -104,6 +120,7 @@ col1, col2 = st.columns([2, 1])
 # Columna izquierda: Información principal
 with col1:
     mostrar_alertas()
+    mostrar_alertas_audio(60,"neutro")
     listado_pacientes()
     informacion_paciente()
 
