@@ -114,4 +114,4 @@ audio = st.file_uploader("Upload an audio file")
 
 if audio is not None:
    #analizar_audio(audio.name) 
-   analizar_audio("audio1.wav") 
+   analizar_audio("/Users/jorgeoyagaorus/Desktop/GRUPO28/grupo28_streamlit-main/audio1.wav")
