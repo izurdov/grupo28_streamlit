@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantilla de Correo Electrónico</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .email-container {
+            width: 600px;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .header {
+            background-color: #08321a;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .logo {
+            max-width: 150px;
+            height: auto;
+        }
+        .content {
+            padding: 30px;
+            color: black;
+        }
+        .footer {
+            background-color: #f1f1f1;
+            color: #00e47c;
+            text-align: center;
+            padding: 20px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+
+        <div class="header">
+            <img src="logo_company.png" alt="Logo" class="logo">
+            <h2>Informe de incidencia paciente</h2>
+        </div>
+
+        <div class="content">
+            <p>Estimado/a Usuario,</p>
+            <p>Desde [Grupo 28] le informamos que el estado actual del paciente se encuentra
+                en estado moderado
+            </p>
+            <p>Porfavor pongase en contacto con el profesional pertinente.</p>
+            <p>Atententamente, servicio automático de alertas de [Grupo 28].</p>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2024 [Grupo 28]. Nos comprometemos a mantener privada su información.</p>
+            <p><a href="https://www.ejemplo.com/terminos-y-condiciones">Términos y Condiciones</a> | <a href="https://www.ejemplo.com/privacidad">Política de Privacidad</a></p>
+        </div>
+    </div>
+</body>
+</html>
