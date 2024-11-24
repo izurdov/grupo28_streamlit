@@ -93,7 +93,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 # Logo
-st.logo("RUTALOGO", size="large", link=None, icon_image=None)
+#st.logo("RUTALOGO", size="large", link=None, icon_image=None)
 #st.logo( "/Users/jorgeoyagaorus/Desktop/GRUPO28/img/Logo.png",
 #    size='large',
 #    link="https://grupo28-app.streamlit.io",
@@ -113,4 +113,5 @@ audio = st.file_uploader("Upload an audio file")
 
 
 if audio is not None:
-   analizar_audio(audio.name) 
+   #analizar_audio(audio.name) 
+   analizar_audio("audio1.wav") 
