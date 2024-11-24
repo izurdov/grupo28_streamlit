@@ -1,21 +1,19 @@
 import streamlit as st
-import pandas as pd
 
-usuarios = pd.DataFrame({
-    'username': ['javier', 'paciente'],
-    'password': ['pass_javier', 'pass_paciente'],
-    'tipo': ['doctor', 'paciente']
-})
+# Convertir los datos de usuarios a un diccionario
+users_dict = {
+    'javier': {'password': 'pass_javier', 'tipo': 'doctor'},
+    'paciente': {'password': 'pass_paciente', 'tipo': 'paciente'}
+}
 
 user_logged = None
 
 
 def login_user(username, password):
     global user_logged
-    for index, row in usuarios.iterrows():
-        if row['username'] == username and row['password'] == password:
-            user_logged = row
-            return True
+    if username in users_dict and users_dict[username]['password'] == password:
+        user_logged = users_dict[username]
+        return True
     return False
 
 
@@ -32,8 +30,10 @@ def show_login_page():
         if login_user(username, password):
             if user_logged['tipo'] == 'doctor':
                 st.session_state.page = 'doctor'
+                st.rerun()
             else:
                 st.session_state.page = 'paciente'
+                st.rerun()
         else:
             st.error('Usuario o contraseña incorrectos')
 
@@ -43,6 +43,7 @@ def show_doctor_page():
     if st.button('Cerrar sesión'):
         logout_user()
         st.session_state.page = 'login'
+        st.rerun()
 
 
 def show_patient_page():
@@ -50,17 +51,14 @@ def show_patient_page():
     if st.button('Cerrar sesión'):
         logout_user()
         st.session_state.page = 'login'
-
+        st.rerun()
 
 if 'page' not in st.session_state:
     st.session_state.page = 'login'
 
 if st.session_state.page == 'login':
     show_login_page()
-    st.rerun()
 elif st.session_state.page == 'doctor':
     show_doctor_page()
-    st.rerun()
 elif st.session_state.page == 'paciente':
     show_patient_page()
-    st.rerun()
